@@ -30,12 +30,10 @@ plt.imshow(image.squeeze().numpy(), cmap ='gray')
 plt.title('label: %s' % label)
 plt.show()
 
-train_loader = (torch.utils.data.DataLoader
-                (dataset = train_data,
-                  batch_size = batch_size, shuffle = True))
-test_loader = (torch.utils.data.DataLoader
-               (dataset = test_data,
-                  batch_size = batch_size, shuffle = True))
+train_loader = torch.utils.data.DataLoader(dataset = train_data,
+                                            batch_size = batch_size, shuffle = True)
+test_loader = torch.utils.data.DataLoader(dataset = test_data,
+                                          batch_size = batch_size, shuffle = True)
 
 first_batch = train_loader.__iter__().__next__()
 
